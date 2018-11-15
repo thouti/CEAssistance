@@ -1,0 +1,8 @@
+<li><a href="retriveUserDetails.html?userId=<%=session.getAttribute("userId").toString()%>" style="text-decoration:none" >View Profile</a></li>
+								<li><a href="#" style="text-decoration:none" onclick="setLinksColor_dash(this)" target="right_body">Company Status</a></li>
+								<li><a href="userAgmdate.html" style="text-decoration:none">Add Companies</a></li>
+								<li><a href="addDirectorInfo.html?hdName=${userName}" style="text-decoration:none">Add Information </a></li>
+								<li><a href="addDirectorInfosec.html" style="text-decoration:none">Add Information more</a></li>
+								<li><a href="viewCalendar.html" style="text-decoration:none">View Calendar and customize</a></li>
+								<li><a href="#" style="text-decoration:none" onclick="setLinksColor_dash(this)" target="right_body">Download Check lists </a></li>
+	

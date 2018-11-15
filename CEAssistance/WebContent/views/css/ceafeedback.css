@@ -1,0 +1,62 @@
+/* Gravity Form */
+.gfield_radio li {float: left;}
+.ginput_container .medium {height:18px;}
+label.gfield_label {line-height:normal !important;}
+
+#review_text {float:left;display:inline;width:500px;}
+
+#review_intro {float:left;width:470px;}
+#review_intro p {font-size:1.1em;}
+
+#review_summary  {float:right;display:inline;width:130px;height:60px;border:1px solid #c8c8c8;padding:7px 25px 14px 25px;margin-bottom:20px;}
+#review_summary h4 {font-weight:bold;text-transform:uppercase;font-size:1em;text-align:center;margin-bottom:2px}
+#review_summary p {font-size:1em;margin-top:7px;text-align:center;}
+
+.avg_ratings {float:left;display:inline;width:126px !important;margin:0 auto;}
+.rating_stars {height:19px;background: url('images/rating-stars.png?v32') no-repeat;}
+.rating_stars.average-0 {background-position:0 0;}
+.rating_stars.average-1, .rating_stars.average-1-1, .rating_stars.average-1-2, .rating_stars.average-1-3, .rating_stars.average-1-4 {background-position:0 0;}
+.rating_stars.average-1-5, .rating_stars.average-1-6, .rating_stars.average-1-7, .rating_stars.average-1-8, .rating_stars.average-1-9 {background-position:0 -19px;}
+.rating_stars.average-2, .rating_stars.average-2-1, .rating_stars.average-2-2, .rating_stars.average-2-3, .rating_stars.average-2-4 {background-position:0 -38px;}
+.rating_stars.average-2-5, .rating_stars.average-2-6, .rating_stars.average-2-7, .rating_stars.average-2-8, .rating_stars.average-2-9 {background-position:0 -57px;}
+.rating_stars.average-3, .rating_stars.average-3-1, .rating_stars.average-3-2, .rating_stars.average-3-3, .rating_stars.average-3-4 {background-position:0 -76px;}
+.rating_stars.average-3-5, .rating_stars.average-3-6, .rating_stars.average-3-7, .rating_stars.average-3-8, .rating_stars.average-3-9 {background-position:0 -95px;}
+.rating_stars.average-4, .rating_stars.average-4-1, .rating_stars.average-4-2, .rating_stars.average-4-3, .rating_stars.average-4-4 {background-position:0 -114px;}
+.rating_stars.average-4-5, .rating_stars.average-4-6, .rating_stars.average-4-7, .rating_stars.average-4-8, .rating_stars.average-4-9 {background-position:0 -133px;}
+.rating_stars.average-5 {background-position:0 -152px;}
+
+.sdac_customer_feedback {clear:both;}
+
+.feedback_heading {background:#dfe0e1;height:65px;}
+.feedback_heading h3 {font-weight:normal;margin:0 !important;padding:0 !important;font-size:1em;}
+.feedback_heading h3 strong {font-weight:bold;text-transform:none;}
+.feedback_heading h3 span {text-transform:none;}
+.feedback_heading .client_details {padding:10px 20px;}
+
+
+.feedback_container {width:678px;margin-bottom:25px;background: url('images/feedback-middle.gif?v5') repeat-y;}
+.feedback_container .feedback_middle {padding: 0 20px;font-size:.85em;}
+
+.feedback_top h3 {text-transform:uppercase !important;color:#fff !important;padding:20px 0 0 10px !important;}
+
+.feedback_middle .feedback_row {float:left;width:642px;clear:both;}
+.feedback_middle .feedback_label {font-size:1.05em;float:left;display:inline;width:170px;line-height:normal !important;padding:14px 0 0 5px;color:#747474;}
+.feedback_middle .feedback_rating {height:44px;float:left;display:inline;width:455px;background: url('images/feedback-rating.gif?v2') no-repeat; border-bottom:1px solid #ddd;margin-left:1px;padding:0 0 0 10px;}
+.feedback_middle .feedback_rating.last {border:0 !important;background:0 !important;height:auto !important;margin-top:10px;padding-bottom:10px;}
+.feedback_middle .feedback_rating.last p {margin-bottom:0 !important;}
+
+.feedback_middle .actual_rating {width:398px;float:left;display:inline;height:26px;background: url('images/rating-bars.png') no-repeat;margin-top:10px;}
+.feedback_middle .actual_rating.value-0 {background-position:0 0;}
+.feedback_middle .actual_rating.value-1 {background-position:0 -26px;}
+.feedback_middle .actual_rating.value-2 {background-position:0 -52px;}
+.feedback_middle .actual_rating.value-3 {background-position:0 -78px;}
+.feedback_middle .actual_rating.value-4 {background-position:0 -104px;}
+.feedback_middle .actual_rating.value-5 {background-position:0 -130px;}
+
+.feedback_description {font-size:1.2em !important;font-style:italic !important;}
+.feedback_description blockquote {margin-top:0 !important;margin-bottom:0 !important;}
+
+.feedback_middle .great {width:50px;float:right;display:inline;padding-top:12px;margin-right:5px;font-size:.9em;}
+
+
+.sdac_paginate_links p {font-size:1em;}

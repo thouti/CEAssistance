@@ -1,0 +1,191 @@
+#ux-datepicker-div {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 250px; PADDING-RIGHT: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND: #ddd; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+.ux-datepicker-inline {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 250px; PADDING-RIGHT: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND: #ddd; font-size:12px; PADDING-TOP: 0px
+}
+#ux-datepicker-div {
+	Z-INDEX: 100;  DISPLAY: none; border:1px solid #b3b3b3 ;
+se
+	 
+}
+.ux-datepicker-inline {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; DISPLAY: block; FLOAT: left; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.ux-datepicker-rtl {
+	DIRECTION: rtl
+}
+.ux-datepicker-dialog {
+	BORDER-BOTTOM: #ddd 4px ridge; BORDER-LEFT: #ddd 4px ridge; PADDING-BOTTOM: 5px !important; PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important; BORDER-TOP: #ddd 4px ridge; BORDER-RIGHT: #ddd 4px ridge; PADDING-TOP: 5px !important
+}
+.ux-datepicker-disabled {
+	Z-INDEX: 100; POSITION: absolute; BACKGROUND-COLOR: white; opacity: 0.5
+}
+BUTTON.ux-datepicker-trigger {
+	WIDTH: 25px
+}
+IMG.ux-datepicker-trigger {
+	MARGIN: 2px; VERTICAL-ALIGN: middle
+}
+.ux-datepicker-prompt {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: #ddd; FLOAT: left; COLOR: #000; PADDING-TOP: 2px
+}
+* HTML .ux-datepicker-prompt {
+	WIDTH: 250px
+}
+.ux-datepicker-control {
+	WIDTH: 100%; FLOAT: left; COLOR: #fff; CLEAR: both
+}
+.ux-datepicker-links {
+	WIDTH: 100%; FLOAT: left; COLOR: #fff; CLEAR: both
+}
+.ux-datepicker-header {
+	WIDTH: 100%; FLOAT: left; COLOR: #fff; CLEAR: both
+}
+.ux-datepicker {
+	WIDTH: 100%; FLOAT: left; COLOR: #fff; CLEAR: both
+}
+.ux-datepicker-control {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; 
+	BACKGROUND: #ccc; 
+	PADDING-TOP: 2px
+}
+.ux-datepicker-links {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; 
+	BACKGROUND: #FEF3E8; 
+	PADDING-TOP: 2px;
+	border-bottom:1px solid #ddd;
+}
+.ux-datepicker-control {
+	FONT-SIZE:12px; FONT-WEIGHT: bold
+}
+.ux-datepicker-links {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.ux-datepicker-links LABEL {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; COLOR: #888; PADDING-TOP: 2px
+}
+.ux-datepicker-clear {
+	WIDTH: 34%; FLOAT: left
+}
+.ux-datepicker-prev {
+	WIDTH: 34%; FLOAT: left
+}
+
+.ux-datepicker-rtl .ux-datepicker-clear {
+	TEXT-ALIGN: right; FLOAT: right
+}
+.ux-datepicker-rtl .ux-datepicker-prev {
+	TEXT-ALIGN: right; FLOAT: right
+}
+.ux-datepicker-current {
+	TEXT-ALIGN: center; WIDTH: 30%; FLOAT: left
+}
+.ux-datepicker-close {
+	TEXT-ALIGN: right; WIDTH: 34%; FLOAT: right
+}
+.ux-datepicker-next {
+	TEXT-ALIGN: right; WIDTH: 34%; FLOAT: right
+}
+.ux-datepicker-rtl .ux-datepicker-close {
+	TEXT-ALIGN: left; FLOAT: left
+}
+.ux-datepicker-rtl .ux-datepicker-next {
+	TEXT-ALIGN: left; FLOAT: left
+}
+.ux-datepicker-header {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: #fff;
+	 HEIGHT: 1.3em;
+	  FONT-WEIGHT: normal; 
+	  PADDING-TOP: 1px;
+	  border-bottom:1px solid #ddd
+}
+.ux-datepicker-header SELECT {
+	 BACKGROUND: #fff ;
+	 COLOR: #000; FONT-WEIGHT: normal; 
+	 border:1px solid #E1E1E1
+}
+.ux-datepicker {
+	TEXT-ALIGN: center; BACKGROUND: #ccc; FONT-SIZE: 100%;	border-collapse:collapse;border-spacing:0
+}
+.ux-datepicker A {
+	WIDTH: 100%; DISPLAY: block
+}
+.ux-datepicker-title-row {
+	BACKGROUND: #F3F3F3 
+}
+.ux-datepicker-days-row {
+	BACKGROUND: #eee; COLOR: #666
+}
+.ux-datepicker-week-col {
+	BACKGROUND: #F3F3F3 ; COLOR: #fff
+}
+.ux-datepicker-days-cell {
+	 COLOR: #000; border:1px solid #B3B3B3; background:#fff;
+}
+.ux-datepicker-days-cell A {
+	DISPLAY: block
+}
+.ux-datepicker-week-end-cell {
+	BACKGROUND: #FEF3E8 
+	
+}
+.ux-datepicker-week-end-cell a{
+color:#F47B29 !important} /*newly added*/
+.ux-datepicker-title-row .ux-datepicker-week-end-cell {
+	BACKGROUND: #F3F3F3 
+}
+.ux-datepicker-days-cell-over {
+	 BACKGROUND: #F3F3F3; border:1px solid #B3B3B3; 
+}
+.ux-datepicker-unselectable {
+	COLOR: #888
+}
+.ux-datepicker-today {
+	BACKGROUND: #F47B29 
+}
+.ux-datepicker-current-day {
+	BACKGROUND: #CCC
+}
+.ux-datepicker-status {
+	TEXT-ALIGN: center; WIDTH: 100%; BACKGROUND: #ddd; FONT-SIZE: 12px
+}
+#ux-datepicker-div A {
+	MARGIN: 0px;  BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #000; CURSOR: pointer;padding:4px; 
+}
+.ux-datepicker-inline A {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #000; CURSOR: pointer; PADDING-TOP: 0px
+}
+.ux-datepicker-inline .ux-datepicker-links A {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important; PADDING-TOP: 0px !important
+}
+.ux-datepicker-control A {
+	PADDING-BOTTOM: 2px !important; PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important; COLOR: #000 !important; PADDING-TOP: 2px !important
+}
+.ux-datepicker-links A {
+	PADDING-BOTTOM: 2px !important; PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important; COLOR: #000 !important; PADDING-TOP: 2px !important
+}
+.ux-datepicker-title-row A {
+	COLOR: #000 !important
+}
+.ux-datepicker-control A:hover {
+	BACKGROUND: #fdd; COLOR: #333 !important
+}
+.ux-datepicker-links A:hover {
+	BACKGROUND: #ddd; COLOR: #000 !important 
+}
+.ux-datepicker-title-row A:hover {
+	BACKGROUND: #ddd; COLOR: #333 !important
+}
+.ux-datepicker-multi .ux-datepicker {
+	BORDER-BOTTOM: #777 1px solid; BORDER-LEFT: #777 1px solid; BORDER-TOP: #777 1px solid; BORDER-RIGHT: #777 1px solid
+}
+.ux-datepicker-one-month {
+	WIDTH: 250px; FLOAT: left
+}
+.ux-datepicker-new-row {
+	CLEAR: left
+}
+.ux-datepicker-cover {
+	Z-INDEX: -1; POSITION: absolute; FILTER: mask(); WIDTH: 250px; DISPLAY: block; HEIGHT: 250px; TOP: -4px; LEFT: -4px
+}

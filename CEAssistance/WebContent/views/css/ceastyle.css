@@ -1,0 +1,1346 @@
+/*
+Theme Name: GuideMeSingapore 2
+Theme URI: http://www.guidemesingapore.com
+Description: Custom GuideMeSingapore WordPress Theme
+Author: Jennifer Zelazny/SDAC Inc.
+Author URI: http://www.sandboxdev.com
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-menu, editor-style, featured-images, theme-options, translation-ready
+Text Domain: sdac_theme
+*/
+
+/*
+JZ CSS file organization
+-----------------
+[1] General - All general items, browser specific hacks
+[2] Header - All things specific to the header
+[3] Main Content - All things specific to the main content
+[4] Plugins - All things specific to plugins
+[5] Sidebars - Things which are specific to the sidebars.
+[6] Footer - Things which are page and section specific.
+Questions/Comments: Email jzelazny@sandboxdev.com.
+*/
+
+
+
+/*---------[1]General---------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,  footer, header, hgroup, menu, nav, section { display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+
+*:focus { outline:none }
+
+@font-face {
+    font-family: 'daxpro-regular';
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-regular-webfont.eot');
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-regular-webfont.woff2') format('woff2'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-regular-webfont.woff') format('woff'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-regular-webfont.ttf') format('truetype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-regular-webfont.svg#daxpro-regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'daxpro-bold';
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-bold-webfont.eot');
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-bold-webfont.woff2') format('woff2'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-bold-webfont.woff') format('woff'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-bold-webfont.ttf') format('truetype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-bold-webfont.svg#daxprobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'daxpro-italic';
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-italic-webfont.eot');
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-italic-webfont.woff2') format('woff2'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-italic-webfont.woff') format('woff'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-italic-webfont.ttf') format('truetype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-italic-webfont.svg#daxproitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'daxpro-medium';
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-medium-webfont.eot');
+    src: url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-medium-webfont.woff2') format('woff2'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-medium-webfont.woff') format('woff'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-medium-webfont.ttf') format('truetype'),
+         url('http://www.guidemesingapore.com/wp-content/themes/guidemesingapore2/fonts/daxpro-medium-webfont.svg#daxpromedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+a {
+	color:#00add0;text-decoration:none;
+	}
+.blue-link {color:##001f4f !important;}
+
+blockquote {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/quotes-left.png?v3') no-repeat 0 2px;font-style: italic;color:#333;font-size: .95em;margin: 15px 0 15px 0;text-indent:24px;padding-top:6px;}
+blockquote p {display:inline;background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/quotes-right.png') no-repeat bottom right;color:#333;font-size: .95em;margin: 0 23px 0 2px;padding-right:24px !important;}
+
+.highlight-quote {width:200px;}
+.highlight-quote.alignleft {margin-right:15px;}
+.highlight-quote.alignright {margin-left:15px;}
+
+.clear {clear:both;}
+
+.alignleft {float: left;}
+.alignright {float: right;}
+.aligncenter {display: block;margin-left: auto;margin-right: auto;}
+
+img.alignleft {margin: 12px 24px 12px 0;}
+img.alignright {margin: 12px 0 12px 24px;}
+img.aligncenter {margin-top: 12px;margin-bottom: 12px;}
+
+.wp-caption {max-width: 100%; padding: 4px;}
+.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {font-style: italic;font-size: .9em;line-height: 2;color: #757575;}
+
+.sticky{border: 1px solid #ededed;}
+
+.bypostauthor {}
+
+body {background:#fff;font-family: 'daxpro-regular', Arial, Helvetica, sans-serif;font-size:.9em;color:#303030;}
+
+.wrapper {width:100%;margin:0 auto;position:relative}
+
+.up {text-transform:uppercase;}
+.v-sep {padding:0 5px 0 5px;}
+
+hr {clear:both;height:1px;width:100%;border:0;background:#f05033;margin:12px 0 12px 0;}
+hr.page-hr {margin-top:0 !important;}
+
+h2 {font-family: 'daxpro-regular', sans-serif;font-weight:normal;color:#151b54;font-size:1.2em;}
+
+.carrot {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -289px -59px no-repeat;height:17px;width:13px;}
+
+p.note {font-size:.75em !important;line-height:1.5em;}
+
+.bold, b {font-weight:bold;}
+.red {color:red;}
+.italic {font-style:italic;}
+
+.errors {background:#f4f5c7;padding:5px;border:1px solid #f2f39e;margin-bottom:20px;}
+
+.janus-red, .gfield_required, .validation_error, .req_field, .error {color:#f05033;}
+.orange {color:#f5572b}
+
+.pb20 {padding-bottom:20px;}
+.pt20 {padding-top:20px;}
+.mt20 {margin-top:20px;}
+/*---------[2]Header---------*/
+#search_social  {z-index:2000;position:relative;height:34px;margin-top:10px;width:100%;}
+
+#search_social #search_form {position:relative;background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite3.png') -756px -459px no-repeat;width:250px;float:right;display:inline;padding-left:35px;}
+#search_social #social {width:190px;float:right;display:inline;}
+.gsc-search-button { display: none; }
+
+.cse-overlay {z-index:2000;position:relative;}
+
+#search_social ul li {list-style:none;float:right;display:inline;
+/* padding-left:15px; */
+}
+/* #search_social ul li a {width:35px;height:32px;background: url('sprite3.png') -206px -9px no-repeat;text-indent:-9999px;display:block;overflow:hidden;} */
+#search_social ul li#icon-twitter a {background-position: -256px -9px;} 
+#search_social ul li#icon-linkedin a {background-position: -306px -9px;} 
+#search_social ul li#icon-facebook a {background-position: -356px -9px;} 
+
+#logo_contact{height:64px;border-bottom:1px solid #ef5231;}
+
+#logo {width:181px;float:left;display:inline;margin-top:-7px;}
+#logo a {height:64px;width:301px;display:block;overflow:hidden;text-indent:-9999px;background:url('nhtlogo1.png') no-repeat 0 -1536px;}
+
+#contact_details {width:420px;float:left;display:inline;}
+ul#contact_info {margin-top:9px;}
+ul#contact_info li {list-style:none;font-size:1.1em;margin:2px 0 2px 155px;padding-left:30px;height:24px;background: url('sprite2.png') -3px -61px no-repeat;line-height:24px !important;vertical-align:bottom;}
+ul#contact_info li#icon-email {background-position: -3px -85px;}
+ul#contact_info a {color:#151B54;}
+ul#contact_info a:hover {color:#001f4f !important}
+
+#inc_packages {float:left;display:inline;width:160px;margin-right:60px;text-align:center;padding-top:18px;}
+
+#enquire_now {width:90px;float:left;display:inline;text-align:center !important;padding-top:18px;}
+
+#inc_packages a, #enquire_now a {font-size:1.2em;text-transform:uppercase;color:#ef5231;font-weight:500;} 
+#inc_packages a:hover, #enquire_now a:hover {text-shadow:2px 2px #ddd;}
+
+/* Superfish */
+
+.sf-menu, .sf-menu * {margin: 0;padding: 0;list-style: none;}
+.sf-menu li {position: relative;border: 1px solid transparent;}
+.sf-menu ul {position: absolute;display: none;top: 100%;left: 0;z-index: 99;}
+.sf-menu > li {float: left;}
+.sf-menu li:hover > ul, .sf-menu li.sfHover > ul {display: block;}
+.sf-menu a {display: block;position: relative;}
+.sf-menu ul ul {top: 0;left: 100%;}
+
+.sf-menu {float: left;margin-bottom: 1em;}
+.sf-menu ul {padding:20px 20px 20px 20px;width:190px;margin-left:-1px;margin-top:-2px;border: 1px solid #d4d4d4;border-top:none;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-main-nav.png') repeat-x;}
+.sf-menu ul ul {border:0;}
+.sf-menu a {zoom: 1; /* IE7 */}
+.sf-menu li li a {border:0;} 
+.sf-menu ul li {width:100%;}
+.sf-menu li.dropdown:hover, .sf-menu li.dropdown.sfHover {background:#f4f4f4;border: 1px solid #d4d4d4;border-bottom:1px solid #f4f4f4;}
+.sf-menu li.dropdown li:hover, .sf-menu li li.dropdown.sfHover {border:0;}
+.sf-menu a.sf-with-ul {padding-right: 2.25em;min-width: 1px;}
+
+.sf-sub-indicator {position: absolute;display: block;left: 2px;top: 10px;width: 14px;height: 12px;text-indent: -999em;overflow: hidden;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite3.png') no-repeat 0 -325px;}
+li:hover > a .sf-sub-indicator, li.sfHover > a .sf-sub-indicator {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/arrow-select.png') no-repeat;}
+.sf-menu ul .sf-sub-indicator {background-position: 0 0;}
+.sf-menu ul li:hover > a .sf-sub-indicator, .sf-menu ul li.sfHover > a .sf-sub-indicator {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/arrow-select.png') no-repeat;}
+
+#main-nav {position:relative;width:945px;float:left;display:inline;z-index:1500;margin-top:10px;}
+#main-nav li {font-family: 'daxpro-regular', sans-serif;float:left;height:31px;line-height:32px;font-size:1.2em;}
+#main-nav li a {color:#151b54;text-decoration:none;margin: 0 62px 0 0px;padding: 0 18px 0 18px;}
+#main-nav li.current-menu-item a, #main-nav li a:hover {color:#151b54;}
+#main-nav li.current-menu-item li a {color:#001f4f;}
+#main-nav li.current-menu-item li a:hover {color:#f05033 !important;}
+#main-nav li li:first-child {border-top:1px solid #e74d31;padding-top:10px;}
+#main-nav li li {font-size:.75em;font-family: 'daxpro-regular', Arial, Helvetica, sans-serif;border:0;height:auto;line-height:normal !important;margin-bottom:10px;}
+#main-nav li li a {color:#001f4f;font-weight:normal;margin:0;padding:0;}
+#main-nav li.last a {margin-right:0 !important;}
+
+#nav-resources ul {width:655px;background:#ececec url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-main-nav.png') repeat-x;height:325px;margin-left:-123px;}
+#nav-resources ul.resource-items {padding-left:20px;}
+#nav-resources ul li.top-item {text-transform:uppercase;font-size:.8em;float:left;display:inline;width:205px;height:145px;margin-right:20px;border-top:1px solid #f05033; padding-top:10px;}
+#nav-resources ul li.top-item.last {margin-right:0 !important;}
+#nav-resources ul li.top-item .row {text-transform:none;margin-top:7px;}
+#nav-resources ul li .row a {font-size:.9em;}
+
+#incorporate-now {float:right;display:inline;width:173px;margin-top:15px;}
+
+.social-links li {background:  url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') no-repeat;}
+.social-links li a {padding-left:24px !important;}
+.social-links li.link-blog {background-position: -608px -105px;height:15px;}
+.social-links li.link-forum {background-position: -608px -134px;height:15px;}
+.social-links li.link-twitter {background-position: -608px -158px;height:15px;}
+.social-links li.link-facebook {background-position: -608px -180px;height:18px;}
+.social-links li.link-linkedin {background-position: -608px -204px;height:18px;}
+.social-links li.link-google {background-position: -608px -226px;height:18px;}
+
+
+/*---------[3]Main Content---------*/
+
+/* Home */
+
+#hero {position:relative;height:425px;width:951px;}
+
+#slideshow {position:relative;height:425px;width:951px;border:1px solid #dcdcdc;overflow:hidden;float:left;clear:both;}
+	
+#slideshow .slide {height:425px;width:951px;overflow:hidden;background: url('carouseljobs.png') no-repeat;}
+#slideshow #slide-1 {background-position: 0 0}
+#slideshow #slide-2 {background-position: 0 -350px }
+#slideshow #slide-3 {background-position: 0 -700px}
+#slideshow #slide-4 {background-position: 0 -1050px}
+
+#slideshow .slide a {display:block;overflow:hidden;width:185px;height:45px;text-indent:-9999px;}
+
+#slideshow .slide#slide-1 a {margin:205px 0 0 20px;}
+/* #slideshow .slide#slide-1 a {display:block;overflow:hidden;width:951px;height:350px;text-indent:-9999px; margin:0;} */
+
+#slideshow .slide#slide-2 a {margin:195px 0 0 20px;}
+/* ORIGINAL #slideshow .slide#slide-3 a {margin:273px 0 0 23px;} */
+#slideshow .slide#slide-3 a {display:block;overflow:hidden;width:951px;height:350px;text-indent:-9999px; margin:0;}
+
+#slideshow .slide#slide-4 a {margin:205px 0 0 20px;}
+
+#slideshow-nav {position:absolute;bottom:20px;right:10px;z-index:99999}
+#slideshow-nav a { display: block; height: 11px; width: 11px; float: left; margin-right: 7px; border-radius: 50%; border:2px solid #fff; background: #fff; font-size: 1px; color: #fff; text-indent: -9999px; }
+#slideshow-nav a.activeSlide { background: #0d476c; }
+#slideshow-#nav a:focus { outline: none; }
+
+
+#company_offerings {float:left;height:87px;margin:8px 0 0 0;}
+#company_offerings div {float:left;display:inline;width:153px;margin-right:7px;}
+#company_offerings div.last {margin-right:0 !important;width:150px;}
+#company_offerings div a {display:block;width:153px;height:87px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite3.png') 0 -148px no-repeat;text-indent:-9999px;overflow:hidden;}
+#company_offerings div a:hover {background-position:-473px 0}
+#company_offerings div#option_tax_accounting a {background-position:0 -236px}
+#company_offerings div#option_tax_accounting a:hover {background-position:-627px -88px}
+#company_offerings div#option_immmigration a {background-position:-154px -148px}
+#company_offerings div#option_immmigration a:hover {background-position:-627px 0}
+#company_offerings div#option_business_licenses a {background-position:-154px -236px}
+#company_offerings div#option_business_licenses a:hover {background-position:-473px -176px}
+#company_offerings div#option_startup_assistance a {background-position:-308px -148px}
+#company_offerings div#option_startup_assistance a:hover {background-position:-473px -88px}
+#company_offerings div#option_easy_switch a {background-position:-308px -236px}
+#company_offerings div#option_easy_switch a:hover {background-position:-627px -176px}
+
+#our-services, #client-testimonials {margin-bottom:12px;width:100%;clear:both;float:left;}
+
+.services-box {position:relative;width:273px;height:124px;float:left;display:inline;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') no-repeat -24px -116px;margin:10px 10px 0 0;padding:14px 37px 0 0;}
+.services-box.last {margin-right:0;}
+.services-box h3 {font-size:1.05em;margin:0 0 5px 58px;}
+.services-box p {line-height:1.6em;font-size:.9em;margin-left:58px;}
+.services-box .service-icon a {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') no-repeat;display:block;text-indent:-9999px;overflow:hidden;position:absolute;left:23px;}
+.services-box#company-formation-box .service-icon a {background-position: -185px -46px;width:22px;height:26px;}
+.services-box#tax-accounting-box .service-icon a {background-position: -209px -46px;width:20px;height:30px;}
+.services-box#immigration-box .service-icon a {background-position: -232px -46px;width:26px;height:33px;}
+.services-box#business-license-box .service-icon a {background-position: -183px -83px;width:26px;height:29px;}
+.services-box#management-legal-box .service-icon a {background-position: -213px -83px;width:32px;height:28px;}
+.services-box#easy-switch-box .service-icon a {background-position: -248px -83px;width:28px;height:26px;}
+
+.services-box#forum-box .service-icon a {background-position: -928px -776px;width:22px;height:26px;}
+.services-box#blog-box .service-icon a {background-position: -928px -750px;width:22px;height:26px;}
+.services-box#facebook-box .service-icon a {background-position: -928px -840px;width:22px;height:26px;}
+.services-box#twitter-box .service-icon a {background-position: -928px -805px;width:22px;height:26px;}
+.services-box#google-box .service-icon a {background-position: -928px -911px;width:22px;height:26px;}
+.services-box#linkedin-box .service-icon a {background-position: -928px -876px;width:22px;height:26px;}
+
+.testimonials-box {position:relative;float:left;display:inline;width:444px;height:132px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') no-repeat -0 -264px;margin:10px 10px 0 0;padding:13px;}
+.testimonials-box.last {margin-right:0;}
+.testimonial-thumbnail {float:left;width:138px;height:100%;margin-right:13px;}
+.testimonial-thumbnail img {border:2px solid #fff;}
+.testimonials-box blockquote {line-height:1.6em;margin-top:0 !important;margin-bottom:0 !important;}
+.testimonials-box p {font-size:.85em;margin-top:7px;}
+.testimonials-box p.read-more {position:absolute;bottom:16px;left:166px;}
+
+a.view-all {float:right;text-align:right;display:inline;color:#f05033 !important;font-size:.85em;font-weight:normal;padding-top:5px;}
+
+.row a.view-all {float:none;text-align:left;font-size:1em;color:#001f4f !important;}
+.row a.view-all:hover {color:#f05033 !important;}
+
+#client-testimonials {margin-bottom:12px;}
+#client-testimonials blockquote {margin-top: 0 !important;text-indent:0;padding-top:0 !important;font-size:.9em;}
+#client-testimonials h2 {display:inline;}
+
+.popular-recent {float:left;display:inline;width:304px;margin-right:19px;}
+.popular-recent h2 {display:inline;}
+.popular-recent h3 {line-height:normal !important;margin:5px 0 5px 0;}
+.popular-recent .time {font-size:.75em;line-height:19px;height:19px;}
+
+.popular-recent#latest_news {width:627px;margin-right:0 !important;}
+.popular-recent#latest_news h3 a {color:#f05033;}
+.popular-recent#latest_news h3 a:hover {color:#001f4f;}
+
+.popular-recent .recent-date {font-size:.75em;line-height:19px;height:19px;padding-left:15px;float:right;}
+
+.box-content {width:272px;height:276px;border:1px solid #dcdcdc;margin-top:13px;padding:14px;overflow:hidden;}
+
+
+.popular-recent#latest_news .box-content {width:599px;}
+
+
+#latest_news #left_news {width:275px;float:left;display:inline;margin:-10px 30px 0 0;}
+#latest_news #right_news {width:275px;float:left;display:inline;margin-top:-10px}
+
+.recent-item {margin-bottom:19px;}
+.recent-item h4 {font-size:.75em;line-height:1.7em;margin-bottom:3px;}
+.recent-item h3 {font-size:.9em;line-height:1.7em;}
+
+
+.blog-thumbnail {height:197px;width:273px;margin-bottom:5px;overflow:hidden;}
+
+/* General Page */
+
+#content {width:678px;float:left;display:inline;}
+#content.no-sidebar {width:100%;}
+
+h5#breadcrumb {font-size:.75em;margin: 13px 0 19px 0;}
+
+.page h1, .tax-faq-category h1 {font-family: 'daxpro-regular', sans-serif;font-size:2.1em;font-weight:normal;line-height:normal !important;}
+
+
+h4.excerpt {font-size:1.2em;line-height:1.7em;margin:10px 0 30px 0;color:#98a0a4;background: #f5f5f5;padding:10px;}
+h4.excerpt-new {font-size:.9em;line-height:1.4em;margin:10px 0 30px 0;color:#333;background: #f5f5f5;padding:10px;}
+
+.share-bar {background:#e9eaeb;height:40px;width:100%;margin:15px 0 25px 0;}
+.share-bar ul {float:left;display:inline;width:350px;margin-left:12px;height:20px;vertical-align:middle;height:20px;line-height:20px;margin-top:10px}
+.share-bar ul li {float:left;display:inline;margin-right:10px;height:20px;line-height:20px;}
+.share-bar.wide-share ul {margin-left:179px;}
+
+.share-bar .print-article {height:25px;line-height:25px;float:right;display:inline;text-align:right;margin-top:4px;border-left:1px solid #ccc;padding:4px 0 4px 0;}
+.share-bar .print-article a {display:block;overflow:hidden;text-indent:9999px;width:24px;height:24px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') 0 -116px no-repeat;margin:0 8px 0 8px;}
+.share-bar .email-share a {display:block;overflow:hidden;text-indent:9999px;width:62px;height:21px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') 0 -467px no-repeat;margin:0;}
+
+
+.entry {font-size:.9em;line-height:1.7em;margin-top:10px;}
+.entry h2 {font-size:1.7em;color:#f05033;font-weight:normal;margin:0;padding:0 0 10px 0;}
+.entry h3 {font-size:1.3em;color:#596167;margin:0;padding:0 0 10px 0;}
+.entry h4 {font-weight:bold;font-size:1.1em;}
+.entry h5 {font-weight:bold;font-size:1.1em;font-style:italic;}
+.entry p, .entry ol, .entry ul, .entry table  {margin-bottom:20px;}
+.entry strong {font-weight:bold;}
+.entry ol {list-style:decimal !important;margin-left:15px;}
+.entry ol ol {list-style:lower-alpha !important;}
+.entry ol.alpha {list-style-type:lower-alpha !important;}
+
+.entry ul li, ul.bulleted-list li {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -945px -1387px no-repeat;padding-left:15px;line-height:1.7em;}
+.entry li {margin:0 0 7px 15px;}
+.entry li ul, .entry li ol {margin-top:10px;}
+.entry li li {margin-bottom:10px; background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -941px -1033px no-repeat;}
+.entry ol ol li {background:none !important;}
+.entry a:hover {color:#f05033}
+
+p.byline {font-size:.85em !important;margin-top:5px;}
+p.byline a {font-weight:bold;}
+
+.single p.byline {margin-bottom:20px !important;}
+.single p.byline .updated-on {padding-left:5px;}
+
+.entry table {border:1px solid#ccc;border-collapse:collapse;}
+.entry table th {background:#ededed;text-transform:uppercase;color:#878888;vertical-align:middle;line-height:normal !important;text-align:left;color:#f05033;padding:10px;border-left:1px solid #ccc;}
+.entry table td {padding:5px 30px 5px 30px;border:1px solid #ccc;}
+
+.entry table tr:nth-child(odd) {background: #f5f5f5;}
+.entry table tr:nth-child(even) {background: #fff;}
+
+.entry table.no-border {border:0 !important;}
+.entry table.no-border th {background:0;border:0 !important}
+.entry table.no-border td {border:0 !important;}
+.entry table.no-border tr:nth-child(odd) {background:none;}
+.entry table.no-border tr:nth-child(even) {background:none;}
+
+.entry .accordion {margin:0 0 15px 0;padding:0;border:1px solid #ddd;}
+.entry .accordion h2 {font-size:1.2em;height:54px;line-height:54px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-accordion.gif') repeat-x;color:#001f4f;margin:0 0 2px 0;padding:0 0 0 40px;}
+.entry .accordion h2:last-of-type {margin-bottom:0 !important;}
+.entry .accordion .ui-accordion-header-icon.ui-icon-triangle-1-s {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -940px -328px no-repeat;margin-left:14px;}
+.entry .accordion .ui-accordion-header-icon.ui-icon-triangle-1-e {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -944px -275px no-repeat;margin-left:14px;}
+.entry .accordion ul.ui-accordion-header {background-image:none !important;}
+.entry .accordion .ui-accordion-content {padding:20px 20px 10px 20px;}
+.entry .accordion .ui-accordion-content  p {line-height:1.7em !important;}
+.entry .accordion .acc p{line-height:1.7em !important;margin:0 0 15px 0!important; padding:0 !important;}
+
+
+.entry ul.float-items li, .entry ol.float-items li {float:left;width:270px;margin-right:30px}
+
+ ul.bulleted-list {margin-top:20px;}
+ ul.bulleted-list li {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -945px -1387px no-repeat !important;padding-left:15px !important;line-height:1.7em !important;}
+
+
+/* Page Navigation */
+.sdac_paginate_links {height:33px;width:auto !important;line-height:33px; font-size:1em;}
+.sdac_paginate_links p {text-align:center;font-size:.9em;}
+.sdac_paginate_links a, span.current {margin:0 !important;background:#faf9f9;border:1px solid #cedbe1;color:#333 !important;text-decoration:none !important;padding:8px 10px 8px 10px;border-right:1px solid #cedbe1;}
+.sdac_paginate_links a.next {border-right:0;color:#3e89d0 !important;}
+.sdac_paginate_links a.prev {color:#3e89d0 !important;}
+.sdac_paginate_links span.current {font-weight:bold !important;color:#f05033 !important;}
+.sdac_paginate_links .next.page-numbers {border-right:1px solid #cedbe1;}
+
+ .entry {margin-top:0 !important;}
+
+
+/* General Forms */
+ .validation_error {padding:10px;}
+.janus-form {float:left;width:647px;position:relative;background:#eee;padding:10px 15px;}
+.janus-form .row, .janus-form .gfield  {float:left;clear:both;width:100%;margin-bottom:10px !important;position:relative;}
+.janus-form .gform_hidden {display:none;margin:0 !important;}
+.janus-form li {background: none !important;clear:both;padding:0 !important;}
+.gform_heading {margin:0 !important;padding:0 0 0 5px !important;}
+.gform_heading h3 {margin:0 !important;padding:10px 10px 0 10px !important;}
+.janus-form h2.gsection_title {font-size:1.2em !important;margin:10px 0 10px 0 !important;padding: 0 !important;}
+.janus-form .gfield_description {margin:15px 0 15px 0;}
+.janus-form .validation_message {display:none;}
+.janus-form .gfield_html {margin:0 !important;padding:0 10px 10px 15px !important;}
+.janus-form input[disabled='disabled'] {background:#efefef !important;}
+
+
+.janus-form .row.submit-row {padding-top:10px !important;height:34px;}
+.janus-form.custom-form  {padding:25px 15px 5px 30px;width:633px;}
+
+.janus-form .label img {vertical-align:text-bottom;padding-left:15px;}
+.janus-form .label, .gfield_label {width:350px;float:left;margin-right:10px;}
+.janus-form label {font-size:1.1em !important;}
+.janus-form input.text, .ginput_container input, .gfield_captcha_input_container input {width:250px;padding:3px !important;border:1px solid #ddd;height:25px !important;font-size:1.2em;}
+.janus-form select, .gfield_select {width:255px;vertical-align:text-bottom;padding:5px 0 5px 0;line-height:30px;height:30px !important;font-size:1.1em;margin-top:5px;}
+.janus-form select.select90 {width:90px;margin-right:10px;}
+.janus-form textarea {width:250px;padding:3px;border:1px solid #ddd;font-size:1.2em;height:70px !important;margin-top:5px !important;}
+
+.janus-form ul.gfield_radio {width:285px;clear:both;float:right;margin:-20px 5px 0 10px;}
+.janus-form ul.gfield_radio li {margin:0 0 5px 0 !important;}
+.janus-form ul.gfield_radio li input {float:left;width:auto !important;border:0 !important;height:auto !important;}
+.janus-form ul.gfield_radio li label {float:left;display:inline;width:230px !important;margin-left:5px;line-height:normal !important}
+
+.janus-form ul.gfield_checkbox {width:285px;clear:both;float:right;margin:-20px 5px 0 10px;}
+.janus-form ul.gfield_checkbox li {margin:0 0 5px 0 !important;}
+.janus-form ul.gfield_checkbox li input {float:left;width:auto !important;border:0 !important;height:auto !important;}
+.janus-form ul.gfield_checkbox li label {float:left;display:inline;width:230px !important;margin-left:5px;line-height:normal !important}
+
+.janus-form ul.gfield_checkbox br {display: none;}
+
+
+.janus-form .gfield_captcha_container {position:relative;height:35px !important;}
+.janus-form .gfield_captcha_container img {position:absolute;left:180px;height:30px;width:130px;}
+.janus-form .gfield_captcha_container input {position:absolute;left:360px;}
+
+.janus-form .gform_footer {float:left;height:40px;clear:both;}
+.janus-form .gform_footer .gform_button, .submit-row .submit-button, #gform_27 #gform_submit_button_27 {position:absolute;left:518px;bottom:15px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png')  -192px -588px;width:132px;height:34px;text-indent:-9999px;display:block;overflow:hidden;border:0;}
+.janus-form .gform_footer .gform_button:hover, .submit-row .submit-button:hover, #gform_27 #gform_submit_button_27:hover {background-position: -195px -508px }
+.janus-form .gform_footer .gform_button:active, .submit-row .submit-button:active, #gform_27 #gform_submit_button_27:active {background-position: -194px -551px }
+
+.janus-form  #custom-incorp.submit-row .submit-button {left:480px !important;bottom:25px !important;}
+
+
+
+.janus-form input.edit-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -688px -508px no-repeat  !important;height:33px;width:171px;border:0;text-indent:-9999px;overflow:hidden;display:block;}
+.janus-form input.edit-button:hover {background-position: -688px -542px !important}
+.janus-form input.edit-button:active {background-position: -688px -577px !important}
+
+
+
+.janus-form label.error {position:absolute;top:-15px;left:0;color:#f05033;width:225px !important;font-size:.85em !important;}
+.janus-form input.error, .janus-form select.error, .janus-form textarea.error {
+     outline: 1px solid #f05033 !important;
+}
+
+.janus-form table.form-table {width:638px !important;padding:0 !important;}
+.janus-form table.form-table label {width:auto !important;}
+.janus-form table.form-table select, .janus-form table.form-table input.text, .janus-form table.form-table textarea {width:120px}
+.janus-form table.form-table td {padding:0 5px 15px 0;vertical-align:top;}
+
+.janus-form .gfield_error input {border:1px solid #f05033 !important;}
+.janus-form .gfield_radio label.error {left:-5px !important;top:-12px !important}
+
+.gform_body li {margin-bottom:20px !important;list-style:none;background:none !important;}
+
+/* New/Sub Custom Forms */
+.janus-form.custom-form p {margin:0 !important;padding:0 !important;}
+.janus-form.custom-form .gfield_html {padding:0 0 15px 0 !important;}
+
+.janus-form.custom-form input.text.inline-text {width:150px;margin-right:15px;}
+.janus-form.custom-form .submit-row .submit-button {left:490px !important;}
+
+.janus-form.company-form {padding-top:10px !important;padding-bottom:10px !important;}
+.janus-form.company-form ul.gfield_radio, .janus-form.company-form ul.gfield_checkbox {width:267px;margin-top:-40px !important;}
+
+.janus-form input#preview-submit {float:right;background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -249px -467px no-repeat;height:34px !important;width:171px !important;text-indent:-9999px;display:block;overflow:hidden;border:0;}
+.janus-form input#preview-submit:hover {background-position: -75px -467px !important}
+.janus-form input#preview-submit:active {background-position: -423px -467px !important}
+
+.janus-form input.edit-button, #gform_27 .gform_previous_button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -688px -508px no-repeat  !important;height:33px;width:171px;border:0;text-indent:-9999px;overflow:hidden;display:block;}
+.janus-form input.edit-button:hover, #gform_27 .gform_previous_button:hover {background-position: -688px -542px !important}
+.janus-form input.edit-button:active, #gform_27 .gform_previous_button:active {background-position: -688px -577px !important}
+
+
+/*Enquire Form */
+.page-template-page-enquire-now-php h1.grey_title {background:#929292;color:#fff;font-size:1.4em;padding:10px;}
+.page-template-page-enquire-now-php .janus-form {background:#ddd;width:920px;margin-top:-20px;padding-top:0;}
+.page-template-page-enquire-now-php .janus-form .label, .page-template-page-enquire-now-php .janus-form .gfield_label {width:500px;}
+.page-template-page-enquire-now-php .janus-form input.text, .page-template-page-enquire-now-php .janus-form .ginput_container input, .page-template-page-enquire-now-php .janus-form .gfield_captcha_input_container input, .page-template-page-enquire-now-php .janus-form textarea  {width:375px;border: 1px solid #ccc;}
+.page-template-page-enquire-now-php .janus-form select, .page-template-page-enquire-now-php .janus-form.gfield_select {width:380px;}
+.page-template-page-enquire-now-php .janus-form .gfield_captcha_container img {position:absolute;left:360px;height:30px;width:130px;}
+.page-template-page-enquire-now-php .janus-form .gfield_captcha_container input {position:absolute;left:510px;}
+.page-template-page-enquire-now-php .janus-form .row, .page-template-page-enquire-now-php .janus-form .gfield  {margin-bottom:20px !important;}
+.page-template-page-enquire-now-php .gform_title, .page-template-page-enquire-now-php  .gform_description {display:none;}
+.page-template-page-enquire-now-php .janus-form .gform_footer .gform_button, .submit-row .submit-button {position:absolute;left:794px;}
+.page-template-page-enquire-now-php .janus-form .ginput_container ul.gfield_checkbox  {float:left;margin-left:507px !important;width:390px !important;}
+.page-template-page-enquire-now-php .janus-form .ginput_container ul.gfield_checkbox label {width:355px !important;}
+   
+.page-template-page-enquire-now-php .janus-select .ginput_container select {
+   background: transparent;
+   width: 410px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+.page-template-page-enquire-now-php .janus-select .ginput_container {
+   width: 380px;
+   height: 34px;
+   overflow: hidden;
+   background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/arrow-select.png') no-repeat right #fff;
+   border: 1px solid #ccc;
+   }   
+   
+
+.page-template-page-enquire-now-php #contact-area {float:left;margin-top:20px;width:895px;}
+
+/* Custom Incorporation */
+.janus-form#custom_form .select-needs-row .label {width:250px;}
+.janus-form#custom_form .select-needs-row .input {width:290px;float:left;display:inline;border-left:1px solid #ccc;border-right:1px solid #ccc;}
+.janus-form#custom_form .select-needs-row .input .gfield_radio label{width:260px !important;}
+.janus-form#custom_form .select-needs-row .totals {width:60px;float:right;display:inline;text-align:right;}
+.janus-form#custom_form .row.select-needs-row {float:left;width:620px;clear:both;border-bottom:1px solid #ccc;margin:0 !important;padding:0 !important;}
+.janus-form#custom_form .select-needs-row.row.border-top {border-top:1px solid #ccc;}
+.janus-form#custom_form .select-needs-row.row.set-height div {height:90px;padding:10px 0 10px 0}
+.janus-form#custom_form .select-needs-row.row.last-row {border-bottom:1px solid #ccc;}
+.janus-form#custom_form .select-needs-row.row.no-border {border:none;}
+.janus-form#custom_form .select-needs-row.row.no-border textarea, .janus-form#custom_form .row.no-border input {width:320px;}
+.janus-form#custom_form .select-needs-row ul.gfield_radio {margin-top:0;float:left;width:100%;}
+
+
+
+.janus-form#custom_form #total-text {float:right;}
+.janus-form#custom_form #total-text label {text-align:right !important;}
+.janus-form#custom_form #total-amount {float:right;margin: 0 0 20px 50px;}
+
+.janus-form#custom_form p {padding: 0 0 25px 0 !important;}
+.janus-form#custom_form .row.no-border input.text {width:250px !important;}
+.janus-form#custom_form input#preview-submit {margin-right:15px !important;}
+
+
+#gform_27 #gform_submit_button_27 {left:532px !important;}
+#gform_27 .gfield {border-top:1px solid #ccc;margin:0 !important;padding:10px 0 10px 0 !important;}
+#gform_27 .gfield.gfield_html {border:0; padding:0 !important;}
+#gform_27 ul.gfield_radio {vertical-align:top !important;margin:-20px 0 0 0 !important;}
+#gform_27 ul.gfield_radio#input_27_21  {margin-top:-38px !important;}
+#gform_27 ul.gfield_radio#input_27_24, #gform_27 ul.gfield_radio#input_27_25 {margin-top:-40px !important;}
+#field_27_29 {border-top:1px solid #aaa;border-bottom:1px solid #aaa;padding:10px;font-weight:bold;width:645px;font-size: 1.2em !important;}
+#field_27_29 label {text-align:right;margin-top:1px;}
+#gform_27 .gform_title,#gform_27 .gf_progressbar_wrapper {display:none;}
+#gform_27 .gfield label.error {margin-top:40px !important;}
+#gform_27 .gfield#field_27_15 label.error {margin-top:54px !important;}
+#gform_27 .gfield_price label.error {margin-top:70px !important;}
+.janus-form input#gform_next_button_27_31 {float:right;background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -249px -467px no-repeat;height:34px !important;width:171px !important;text-indent:-9999px;display:block;overflow:hidden;border:0;}
+.janus-form input#gform_next_button_27_31:hover {background-position: -75px -467px !important}
+.janus-form input#gform_next_button_27_31:active {background-position: -423px -467px !important}
+#gform_27 input.gform_next_button {bottom:175px !important;}
+#gform_27 .gfield_description {float:left;display:inline;margin-top:-5px;}
+#gform_27 .gform_page_footer {width:100%;clear:both;height:38px;float:left;!important;}
+#gform_27 .janus-form .label,#gform_27 .gfield_label {width:345px;}
+#gform_27.janus-form input.text, #gform_27.janus-form .ginput_container input, #gform_27.janus-form .ginput_container textarea, #gform_27.janus-form .ginput_container select, #gform_27.janus-form .gfield_captcha_input_container input {width:280px;}
+
+
+/* Next Steps */
+#gform_wrapper_30 {display:block !important;}
+#gform_30.janus-form ul.gfield_checkbox input {margin-left:5px !important;}
+
+/* Tax Form */
+#tax-form {margin-bottom:20px;}
+.janus-form input#submit-tax {float:right;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -180px -656px no-repeat;height:34px;width:171px;text-indent:-9999px;display:block;overflow:hidden;border:0;margin-right:15px;}
+.janus-form input#submit-tax:hover {background-position:-180px -622px;}
+.janus-form input#submit-tax:active {background-position:-520px -422px;}
+
+/* New/Sub Forms */
+.high-select select {margin-top:25px !important;}
+
+
+
+/* Payment Form */
+#payment_form {padding:30px;width:618px;}
+#payment_form.janus-form h2 {font-size:1.2em !important;}
+#payment_form input.edit-button {float:left;}
+#payment_form input#preview-submit {margin-right:0px;padding-bottom:10px !important;}
+#payment_form input.submit-button {bottom:30px !important;left:520px !important}
+
+
+
+#contact-us-interested {clear:both;width:648px;height:50px;background:#abacad;padding:0 15px 0 15px;margin-bottom:20px;}
+#contact-us-interested h4 {color:#fff;line-height:50px;font-size:1.3em;font-weight:normal;}
+#contact-us-interested h4 a {float:right;margin:10px 0 0 0;}
+
+/* Incorporate Now Shortcode */
+#incorporate-now-shortcode {width:198px !important;border:1px solid #dcdcdc;background:#f5f5f5;padding:5px 20px 20px 20px;}
+#incorporate-now-shortcode h4 {font-size:2.3em !important;line-height:1.3em;font-weight:normal;margin-bottom:10px;}
+#incorporate-now-shortcode p {font-weight:normal;line-height:1.6em;margin:10px 0 20px 0;}
+
+.horizintal-call-to-action {clear:both;width:648px;min-height:50px;background:#abacad;padding:0 15px 0 15px !important;margin-bottom:20px;}
+.horizintal-call-to-action h4 {color:#fff;line-height:50px;font-size:1.3em;font-weight:normal;}
+.horizintal-call-to-action h4 a {float:right;display:block;text-indent:-9999px;overflow:hidden;background:#ddd;height:33px;width:171px;margin:10px 0 0 0;}
+
+
+/* Incorporate Now Shortcode */
+.vertical-call-to-action {width:198px !important;border:1px solid #dcdcdc;background:#f5f5f5;margin-bottom:20px;padding:5px 20px 0 20px;}
+.vertical-call-to-action h4 {font-size:2.3em !important;line-height:1.3em;font-weight:normal;margin-bottom:10px;}
+.vertical-call-to-action p {font-weight:normal;line-height:1.6em;margin:10px 0 20px 0;}
+.vertical-call-to-action a {width:173px;height:35px;display:block;overflow:hidden;text-indent:-9999px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') no-repeat -179px 0; margin-left:12px;}
+.vertical-call-to-action.alignleft {margin-right:15px;}
+.vertical-call-to-action.alignright {margin-left:15px;}
+
+/* Custom Buttons */
+a.custom-button {display:block;text-indent:-9999px;overflow:hidden;background:#ddd;height:33px;width:171px;}
+
+a.custom-button.incorporate-now-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -353px -686px no-repeat  !important;height:33px;width:171px;}
+a.custom-button.incorporate-now-button:hover {background-position: -526px -686px !important}
+a.custom-button.incorporate-now-button:active {background-position: -698px -686px !important}
+
+a.custom-button.contact-us-today-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') 0 -422px no-repeat  !important;height:33px;width:171px;}
+a.custom-button.contact-us-today-button:hover {background-position: -174px -422px !important}
+a.custom-button.contact-us-today-button:active {background-position: -346px -422px !important}
+
+a.custom-button.lets-start-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -5px -724px no-repeat  !important;height:33px;width:171px;}
+a.custom-button.lets-start-button:hover {background-position: -6px -653px !important}
+a.custom-button.lets-start-button:active {background-position: -5px -688px !important}
+
+a.custom-button.learn-how-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -5px -757px no-repeat !important;height:33px !important;width:171px;}
+a.custom-button.learn-how-button:hover {background-position: -687px -611px !important}
+a.custom-button.learn-how-button:active {background-position: -687px -645px !important}
+
+a.custom-button.start-now-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -5px -790px no-repeat !important;height:33px !important;width:171px;}
+a.custom-button.start-now-button:hover {background-position: -596px -467px !important}
+a.custom-button.start-now-button:active {background-position: -337px -575px !important}
+
+a.custom-button.get-a-custom-quote-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -5px -823px no-repeat !important;height:33px !important;width:171px;}
+a.custom-button.get-a-custom-quote-button:hover {background-position: -337px -507px !important}
+a.custom-button.get-a-custom-quote-button:active {background-position: -337px -541px !important}
+
+
+a.custom-button.get-started-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -179px -724px no-repeat !important;height:33px !important;width:171px;}
+a.custom-button.get-started-button:hover {background-position: -514px -508px !important}
+a.custom-button.get-started-button:active {background-position: -514px -544px !important}
+
+
+a.custom-button.visit-janus-forum-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -179px -757px no-repeat !important;height:33px !important;width:171px;}
+a.custom-button.visit-janus-forum-button:hover {background-position: -6px -507px !important}
+a.custom-button.visit-janus-forum-button:active {background-position: -6px -541px !important}
+
+
+a.custom-button.get-help-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -179px -790px no-repeat !important;height:33px !important;width:171px;}
+a.custom-button.get-help-button:hover {background-position: -6px -577px !important}
+a.custom-button.get-help-button:active {background-position: -6px -613px !important}
+
+a.custom-button.accounting-services-quote-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -353px -724px no-repeat !important;height:33px !important;width:221px !important;}
+a.custom-button.accounting-services-quote-button:hover {background-position: -576px -724px !important}
+a.custom-button.accounting-services-quote-button:active {background-position: -352px -757px !important}
+
+a.custom-button.next-steps-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -195px -831px no-repeat !important;height:33px !important;width:171px;}
+a.custom-button.next-steps-button:hover {background-position: -195px -867px !important}
+a.custom-button.next-steps-button:active {background-position: -195px -903px !important}
+
+a.custom-button.tax-calculator-button {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png?v2') -188px -1438px no-repeat !important;height:33px !important;width:171px;margin-bottom:20px !important}
+a.custom-button.tax-calculator-button:hover {background-position: -4px -1438px !important}
+a.custom-button.tax-calculator-button:active {background-position: -371px -1438px !important}
+
+.vertical-call-to-action a.custom-button.accounting-services-quote-button {margin-left:-12px !important;}
+
+
+
+/* Related Links Shortcode */
+#related-topics {float:right;width:202px;padding:15px;background:#eee;margin: 8px 0 0 15px;}
+#related-topics h3 {font-size:1.3em;margin-bottom:15px;border-bottom:1px solid #f05033;padding-bottom:5px;}
+#related-topics li {font-size:.9em;line-height:1.6em;margin-bottom:5px;border-bottom:1px solid #ddd;padding-bottom:5px;}
+#related-topics a:hover {color:#f05033 !important}
+
+/* Tax Form */
+.page-id-1295 #related-topics li {background:none !important;padding-left:0 !important;margin-left:0 !important;}
+
+.page-id-1295 .general-form {background:#eee;margin-bottom:20px;padding:20px 0 20px 20px;width:620px;height:235px;}
+.page-id-1295 .general-form div {height:40px;}
+.page-id-1295 .general-form label {font-weight:bold;float:left;width:500px;}
+.page-id-1295 .general-form input#change-data {margin-bottom:25px !important;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') no-repeat -355px -790px;border:0;text-indent:-9999px;overflow:hidden;height:33px;width:180px;}
+
+
+
+/* Incorporate Now Shortcode */
+#incorporate-now-shortcode {width:198px !important;border:1px solid #dcdcdc;background:#f5f5f5;padding:5px 20px 20px 20px;}
+#incorporate-now-shortcode h4 {font-size:2.3em !important;line-height:1.3em;font-weight:normal;margin-bottom:10px;}
+#incorporate-now-shortcode p {font-weight:normal;line-height:1.6em;margin:10px 0 20px 0;}
+
+.entry #incorporate-now-shortcode {padding:10px 20px 0 20px;}
+.entry #incorporate-now-shortcode h4 {font-size:2.6em !important;}
+.entry #incorporate-now-shortcode p  {font-size:1.1em !important;}
+
+/* Contact Us Page */
+#content-contact {width:100%;}
+#contact-area {background:#dfe0e1;padding:28px;width:890px;height:364px;margin-bottom:30px;}
+#contact-text {float:left;display:inline;width:270px;}
+#contact-text .address-group {margin-bottom:30px;}
+#contact-text .address-group h3 {font-size:.875em;font-weight:bold;margin-bottom:8px;}
+#contact-text .address-group p {font-size:.875em;margin-bottom:8px;}
+#contact-map {float:right;display:inline;width:597px;height:362px;}
+
+#contact-form {background:#e8e8e8;padding:28px;width:900px;margin-top:10px;}
+#contact-form h2 {font-size:1.05em;margin-bottom:10px;}
+#contact-form p {margin-bottom:30px;}
+
+#contact-form li#field_12_5 {margin-top:-260px !important;}
+#contact-form li#field_12_5 textarea {height:155px;width:424px;}
+#contact-form li#field_12_6 {margin-top:-60px;width:430px;}
+#contact-form li#field_12_6 .gfield_captcha_input_container {float:right;text-align:left;}
+#contact-form li#field_12_6 .gfield_captcha_input_container input {border:1px solid #ddd;width:250px;padding:3px;margin-left:10px;height:20px;}
+
+#gform_submit_button_12 {position:absolute;right:20px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -132px -588px;width:192px;height:34px;text-indent:-9999px;overflow:hidden;border:0;cursor:pointer;}
+
+/* Senior Team */
+.team-member {float:left;display:inline;width:300px;}
+.team-member.odd {margin-right:60px;}
+.team-member img {border:3px solid #fff;}
+.team-member .member-card {background:#eee;margin-bottom:15px;padding:10px 0 0 10px;height:136px;}
+.team-member .member-photo {float:left;display:inline;width:115px;overflow:hidden;}
+.team-member .member-info {float:right;display:inline;width:175px;margin-top:10px;position:relative;}
+.team-member .member-info h2 {font-size:.9em;border-top:1px solid #e74d31;font-weight:normal;margin:0;padding-top:5px;}
+.team-member .member-info h3 {text-transform:none !important;font-style:italic;font-size:.9em;line-height:normal !important;margin:0 0 6px 0;padding-right:10px;}
+.team-member .member-info h4 {font-size:.9em;margin:0;font-weight:normal;line-height:normal !important;padding-right:10px;position:absolute;top:95px;}
+.team-member .member-info h4.two-line-job {top:78px}
+
+/* Local */
+#local-setup .title {background:#abacad;text-align:center;height:50px;line-height:50px;color:#fff;font-size:1.3em;}
+#local-setup .option {height:35px;line-height:35px;margin-top:10px;background: #dfe0e1 url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite8.png') -336px -1215px;}
+#local-setup .option.check {background-position:-336px -1261px;} 
+#local-setup .option span {padding-left:50px;}
+#local-setup p {margin-top:15px;}
+#local-setup #direct-setup {width:330px;float:left;display:inline;margin-right:10px;}
+#local-setup #engaging-h {width:330px;float:left;display:inline;}
+
+#tailor-made {font-size:1.4em;}
+#tailor-made a {text-decoration:underline;}
+
+/* Local Details */
+#one-stop {color:#f5572b;font-weight:600;font-size:1.5em;}
+#one-stop .blue {color:#00476d;}
+ol.alpha.local-list {color:#00add0;font-weight:bold;}
+ol.alpha.local-list span {color:#303030;font-weight:normal;}
+
+/* Category Views */
+.entry ul.sub-pages li {background:none;margin-bottom:10px;padding-left:0;}
+.child {width:352px;margin-bottom:30px !important;}
+.child h3 {border-top:1px solid #f05033;padding-top:4px;font-weight:300;margin-bottom:5px;width:300px;}
+.child li {padding-right:20px;}
+.child.odd {float:left; }
+.child.even {margin-left:352px;margin-right:0;}
+
+.page-child .entry ul.sub-pages {border-top:1px solid #d5d5d5 !important;margin-top:30px;padding-top:4px;}
+.page-child .entry ul.sub-pages li {margin-bottom:5px;}
+
+
+/* Testimonials */
+.client {position:relative;background:#eee;margin-bottom:10px;width:662px;height:195px;padding:15px 0 15px 15px;}
+.client .client-thumbnail {float:left;display:inline;width:240px;overflow:hidden}
+.client .client-thumbnail img {border:3px solid #fff;}
+.client .client-info {float:left;display:inline;width:410px;}
+.client .client-info blockquote {padding-right:20px;}
+.client .client-info p {margin-top:5px;font-size:.95em;}
+.client h3 {font-weight:normal;border-bottom:1px solid #f05033;padding-bottom:7px;margin-bottom:10px;line-height: normal !important;}
+.client p.read-story {position:absolute;bottom:-8px;border-top:1px solid #d5d5d5;padding-top:5px;width:410px;}
+
+.archive .client-thumbnail {height:206px;height:196px;overflow:hidden}
+
+.client.blog-view h3 {font-size:1.3em;}
+.client.blog-view p {font-size:.9em;line-height:1.6em !important;}
+
+.faq-view h3 {font-size:1.7em;}
+.faq-view p {font-size:1.1em;line-height:1.6em !important;}
+
+p.categories {font-size:.75em !important;}
+p.categories a {background:#d5d5d5;padding:3px;}
+p.categories a:hover {color:#f05033 !important;}
+.client.blog-view .blog-date {text-align:right;position:absolute;right:0;}
+.client.blog-view p.read-story {bottom: 12px !important;}
+
+.single p.categories {margin:10px 0 15px 0;}
+.single h3.post-date {margin:5px 0 15px 0 !important;}
+
+/* Ready Made Packages */
+
+#numbered-steps {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') 0 -964px no-repeat;height:35px;width:685px;margin:10px 0 15px 0;}
+#numbered-steps.step-one {background-position: 0 -964px;}
+#numbered-steps.step-two {background-position: 0 -1000px;}
+#numbered-steps.step-three {background-position: 0 -1035px;}
+
+#next-steps {overflow: hidden; height: auto !important;}
+
+#numbered-steps.step-one a#step-one-link {float:left;width:480px;display:block;text-indent:-9999px;overflow:hidden;height:35px;}
+
+#numbered-steps.step-two a#step-one-link {float:left;width:100px;display:block;text-indent:-9999px;overflow:hidden;height:35px;}
+#numbered-steps.step-two a#step-two-link {float:left;width:480px;display:block;text-indent:-9999px;overflow:hidden;height:35px;}
+
+#numbered-steps.step-three a#step-one-link {float:left;width:100px;display:block;text-indent:-9999px;overflow:hidden;height:35px;}
+#numbered-steps.step-three a#step-two-link {float:left;width:100px;display:block;text-indent:-9999px;overflow:hidden;height:35px;}
+#numbered-steps.step-three a#step-three-link {float:left;width:480px;display:block;text-indent:-9999px;overflow:hidden;height:35px;}
+
+.ready-package {border:1px solid #ddd;margin-bottom:15px;}
+.ready-package .ready-intro {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite3.png') 0 -389px no-repeat;height:90px;width:636px;padding:10px 20px;}
+.ready-package .ready-intro h3 {color:#001f4f !important;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/arrow-side.png') left center no-repeat;;padding-left:15px;cursor:pointer;}
+.ready-package h3 {font-size:1.2em;text-transform:none;margin-bottom:5px !important;padding-bottom:0 !important}
+.ready-package h3 a {font-weight:normal;}
+.ready-package h2 {margin:-5px 0 0 0;padding:0;}
+.ready-package p {margin-top:0 !important;}
+
+.ready-package ul.children li {background:#ddd;float:left;display:inline;width:190px;height:230px;}
+
+.sub-package {position:relative;width:203px;height:308px;float:left;display:inline;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -718px -953px no-repeat;margin:15px 4px 20px 0;padding:10px;}
+.sub-package.last {margin-right:0 !important;}
+.sub-package h3 {text-transform:none;line-height:1.7em;font-weight:normal;}
+.sub-package h4 {font-size:.85em;line-height:1.7em;}
+.sub-package p {font-size:.9em;line-height:1.7em;margin-top:10px;}
+.sub-package p.package-link {position:absolute;bottom:15px;}
+
+.sub-package-new {position:relative;width:200px;height:330px;float:left;display:inline;margin:5px 4px 0 0;padding:0 10px 0 10px;}
+.sub-package-new h3 {font-size:1.1em;color:#333;font-weight:bold;}
+.sub-package-new p {line-height:1.4em;}
+.sub-package-new p.package-link {position:absolute;bottom:15px;font-size:.85em;}
+.sub-package-new p.package-link a {color:#f05033;}
+
+
+.package-details {height:155px;width:638px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') 0 -1189px no-repeat;padding:20px;margin-top:12px;}
+.package-details h2 {font-family: 'daxpro-regular', sans-serif;text-transform:uppercase;font-size:1.8em;font-weight:300;}
+.package-details h3 {font-family: 'daxpro-regular', sans-serif;color:#abacad;font-weight:300;margin:5px 0 15px 0;}
+
+
+.page-template-page-ready-made-packages-step-2-php .sub-package p {font-size:.875em !important;}
+
+
+/* Packages */
+@media projection, screen {.ui-tabs-hide {display: none;}}
+@media print {.ui-tabs-nav {display: none;}}
+
+.ready-packages {margin:0 !important;padding:0 !important;overflow:hidden;}
+
+ul.tabbed-package {margin-top:8px;}
+ul.tabbed-package li {float:left;display:inline;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-tab.png?v110') repeat-x;height:41px;line-height:41px;border-right:1px solid #dfe0e1;border-top:1px solid #dfe0e1;}
+ul.tabbed-package li.first {border-left:1px solid #dfe0e1;}
+ul.tabbed-package li a {padding:0 40px 0 40px;}
+ul.tabbed-package .ui-state-focus{ outline: none !important;}
+.ui-tabs-active {background:#dfe0e1 !important;}
+.ui-tabs-active a {color:#000 !important;}
+
+/* Skin */
+.ui-tabs-nav, .ui-tabs-panel {font-size: .9em;}
+.ui-tabs-hide {position: absolute;left: -10000px;display: block;}
+.ui-tabs { position: relative; padding: .2em; zoom: 1; } 
+.ready-packages .ui-tabs .ui-tabs-nav { margin: 0 !important; padding:0;border-bottom:5px solid#7ac043;height:31px;width:100%;}
+.ready-packages .ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0 !important; border:1px solid#dfe0e1;border-bottom: 0 !important;white-space: nowrap; background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-tab_package.gif') repeat-x;height:28px;line-height:28px !important;font-size:1.2em;padding:0 5px 0 5px;}
+.ready-packages .ui-tabs .ui-tabs-nav li a { float: left; padding: 0 10px 0 10px; text-decoration: none; }
+.ready-packages .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 2px;background:#7ac043; }
+.ready-packages .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ready-packages .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ready-packages .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text;color:#fff; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } 
+.ui-tabs .ui-tabs-hide { display: none !important; }
+.ready-packages .ui-tabs .ui-tabs-panel { float:left;display: block; width:100%;border:1px solid #ddd; background:#fff;}
+
+.page-template-page-ready-made-packages-step-3-php .entry p {margin-bottom:7px !important;padding-bottom:0 !important;}
+
+.package-info .heading {clear:both;background:#dfe0e1;margin-top:0 !important}
+.package-info .heading h3 {color:#333;padding:20px 20px 10px 10px;}
+.package-info.package-details-tab .heading h3 {border-bottom:1px solid #ccc;}
+.package-info.package-details-tab .package-details-text .heading.other h3 {padding-left:10px !important;}
+.package-info h4 {padding:10px !important;}
+.package-info ul {margin:10px 0 0 20px;}
+.package-info img {max-width:98%;}
+.package-info p {line-height:1.7em;margin-bottom:20px !important;}
+
+.package-info .item_cost {float:left;display:inline;width:73px;padding:0 5px;height:35px;text-align:right !important;}
+.package-info .left_col {float:left;display:inline;width:270px;margin-right:20px;}
+.package-info .right_col {float:left;display:inline;width:240px;}
+.package-info .left_col li, .ready-packages .right_col li {width:100%;}
+
+.package-info .item {float:left;width:100% !important;border-bottom:1px solid #ccc;height:35px;}
+.package-info .item.auto-height {height:auto !important;}
+.package-info .item.last {border-bottom:0;}
+.package-info .item.total h3 {text-align:right;}
+.package-info .item_info {float:left;display:inline;width:568px;padding:0 10px 0 10px !important;border-right:1px solid #ccc;}
+.package-info .item h3 {font-weight:normal;vertical-align:middle !important;line-height:35px !important;margin:0 !important;padding:0 !important;}
+
+
+.ready-packages .detailed-info {background:#dfe0e1;float:left;overflow:hidden;border:1px solid #dfe0e1;width:100%;overflow:hidden;margin:0 !important;}
+.ready-packages .detailed-info p {margin-bottom:20px !important;}
+
+
+
+.ready-packages .document-info .detailed-info p {margin-bottom:10px !important;}
+.ready-packages .document-info .detailed-info ul {margin:0 0 10px 0 !important;}
+
+
+.ready-packages .package-general .detailed-info {width:646px;padding:15px;}
+.ready-packages .package-general .detailed-info ul {width:625px;float:left;margin:5px 0 15px 20px !important;}
+.ready-packages .package-general .detailed-info ul li {width:610px !important;margin:0 0 10px 0 !important;}
+
+
+.entry .wpfaqquestions {clear:both;float:left;padding:0 !important;margin:0 !important;width:625px;border: 0 !important;border:1px solid #ddd !important;width:100% !important;margin-bottom:20px !important;}
+.entry .wpfaqquestions h4.wpfaqacctoggle, .entry .wpfaqquestions h4.wpfaqtoggle  {font-weight:normal !important;text-transform:none !important;height:54px;line-height:54px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-accordion.gif') repeat-x !important;color:#001f4f;margin:0 0 2px 0 !important;padding:0 0 0 40px !important;}
+.entry .wpfaqquestions h4.wpfaqacctoggle:last-of-type, .entry .wpfaqquestions h4.wpfaqtoggle:last-of-type, .wpfaqquestions .wpfaqcontent:last-of-type {margin-bottom:0 !important;}
+.entry .wpfaqquestions .ui-icon-triangle-1-e {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -944px -275px no-repeat !important;margin-left:14px;}
+.entry .wpfaqquestions .ui-icon-triangle-1-s {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -940px -328px no-repeat  !important;margin-left:14px;}
+div.wpfaqacc h4.wpfaqacctoggle a  {background:none !important;font-weight:normal !important;}
+
+.wpfaqquestions .wpfaqcontent {width:610px !important;overflow:hidden !important;border:0 !important;}
+
+.wpfaqquestions .wpfaqcontent li, .wpfaqquestions .wpfaqcontent p {max-width:620px !important;line-height:1.6em !important;}
+.wpfaqquestions .wpfaqcontent, .wpfaqacccontent {padding:20px !important}
+.wpfaqacccontent p, .wpfaqacccontent li {line-height:1.6em !important}
+.wpfaqquestions p, .wpfaqquestions li {float:left;width:98% !important;}
+
+
+
+
+.ready-packages .wpfaqquestions {border-left:0 !important;width:676px !important;}
+.ready-packages .package-faqs .wpfaqquestions .wpfaqcontent {padding-top:0 !important;}
+.ready-packages .package-faqs .wpfaqcontenti {padding-top:10px !important;}
+
+.ready-packages .package-faqs  .wpfaqcontent {height:auto !important;}
+
+.ready-packages .package-faqs .wpfaqquestions .wpfaqcontent li, .ready-packages .package-faqs .wpfaqquestions .wpfaqcontent p {max-width:660px !important;}
+
+.ready-packages ul#packages_select {list-style:none;margin:0 0 15px 0;padding:0;}
+.ready-packages ul#packages_select li {display:inline;}
+.ready-packages ul#packages_select li a {font-weight:bold;margin:0;padding:0;text-decoration:none;}
+.ready-packages ul#packages_select li.ui-tabs-selected a {color:#7ac142;}
+
+.ready-packages .accordion .ready_info .detailed-info.faqs  h4 {margin-top:0 !important;}
+
+
+/* 2014 Ready Packages */
+.ready-package-options {width:698px;}
+.ready-package-options .package-header {height:51px;width:698px;background:url('images/sprite-package-headers.png') no-repeat;margin-bottom:10px;}
+.ready-package-options .package-header.package-1769 {margin-top:15px;}
+.ready-package-options .package-header.package-1771 {background-position: 0 -51px;}
+.ready-package-options .package-header.package-1775 {background-position: 0 -102px;}
+.ready-package-options .package-option {margin:5px 0 5px 0;}
+.ready-package-options .package-option .package-title {float:left;display:inline;width:230px;margin-right:15px;}
+.ready-package-options .package-option .package-code {float:left;display:inline;width:40px;margin-right:15px;}
+.ready-package-options .package-option .package-pricing {float:left;display:inline;width:240px;margin-right:15px;}
+.ready-package-options .package-option .package-set-up {float:left;display:inline;width:142px;}
+
+.ready-package-options .package-option .package-code h3, p#custom-quote-option {font-weight:bold;color:#001f4f}
+
+.ready-package-options .package-option .package-title h4 {background:url('images/sprite.png') -241px -1539px no-repeat;padding-left:20px;line-height:normal !important}
+
+.ready-package-options .package-option .package-pricing .package-was {display:block;float:left;color:#444;font-size:.95em;text-decoration:line-through;width:100px;}
+.ready-package-options .package-option .package-pricing .package-now {color:#f05033;font-size:1.05em;font-weight:bold;padding-left:15px;}
+
+a.package-set-up-button  {background:url('images/sprite.png') -169px -1218px no-repeat;width:142px;height:25px;display:block;overflow:hidden;text-indent:-9999px}
+#next-steps-accordion h4.ui-state-active a:hover {background:url('images/sprite.png') -170px -1254px no-repeat;}
+
+p#custom-quote-option {margin-top:20px;}
+p#custom-quote-option a {text-decoration:underline;color:#eb5233;}
+.other-services h3, .red-numbers h3 {color:red;}
+
+
+/* Hawksford Menus */
+.hawksford-side-menu {border:0 !important;}
+.menu-title {background:#001f4f; color: #fff;height:37px;line-height:37px;font-size:1.4em;padding-left:15px;}
+.hawksford-menu {padding:15px 0 5px 15px;}
+.hawksford-menu li {margin-bottom:10px; color:#001f4f;}
+.hawksford-menu a:hover {color:#ed5233;}
+
+.page-template-page-ready-made-packages-step-3-php .horizintal-call-to-action {margin-bottom:0;}
+
+#next-steps-accordion {clear:both;width:100%;min-height:50px;background:#abacad;margin-bottom:5px;}
+#next-steps-accordion h4 {color:#fff;line-height:50px;font-size:1.3em;font-weight:normal;padding:0 15px 0 15px !important;}
+#next-steps-accordion h4 a {float:right;display:block;text-indent:-9999px;overflow:hidden;margin:13px 0 0 0;}
+
+
+#next-steps-accordion .ui-accordion-header-icon.ui-icon-triangle-1-s {background:none !important;}
+#next-steps-accordion .ui-accordion-header-icon.ui-icon-triangle-1-e {background:none !important;}
+#next-steps-accordion .ui-accordion-header-active a, #next-steps-accordion .ui-accordion-header-active, #next-steps-accordion .ui-accordion-header:hover {color:#fff !important;}
+
+
+#next-steps h3, #next-steps p {padding:20px 20px 10px 30px;}
+#next-steps p {margin-bottom:0 !important;padding-top:5px;line-height:1.7em !important;}
+#next-steps {background:#eee;border:1px solid #d4d4d4;}
+#next-steps .janus-form {width:645px;}
+
+/* -- Lightbox-- */
+.apple-overlay div {height:430px;width:540px;overflow-y: auto;padding:10px 20px 10px 10px;}
+.apple-overlay p {margin: 0 0 10px 0 !important;padding:0 !important;}
+.apple-overlay h3, .apple-overlay h4 {font-weight:bold !important;margin:10px 0 10px 0;}
+
+/* Why Janus */
+#why-janus h2 {font-size:1.3em !important;}
+#why-janus h2.why {font-size:1.1em !important;margin:0 !important;padding:0 !important;}
+#why-janus .left50 {float:left;display:inline;width:302px;}
+#why-janus .right50 {float:right;display:inline;width:302px;}
+#why-janus .greyhr {height:1px;width:100%;border-top:1px solid #ddd;padding:20px 0 0 0;}
+
+/* Custom Quote */
+#gmsEnquiryForm {width:665px !important;}
+
+
+
+input#preview-submit {float:right;background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -250px -467px no-repeat;height:34px;width:171px !important;text-indent:-9999px;display:block;overflow:hidden;border:0;}
+
+
+/* Sub Service */
+.page-template-page-sub-service-php #top-content h1 {margin: 0 0 15px 0;height:54px;}
+.page-template-page-sub-service-php #top-content h1 span {padding-left:45px;line-height:54px;}
+.page-template-page-sub-service-php #service-banner {background:#fff;border:1px solid #d4d4d4;margin-bottom:15px;}
+
+.page-template-page-sub-service-php .entry {margin-top:0;}
+
+.page-template-page-sub-service-php #bottom-content {margin-top:40px;font-size:.9em;}
+.page-template-page-sub-service-php #bottom-content p, .page-template-page-sub-service-php #bottom-content li {line-height:1.7em;margin-bottom:15px;}
+.page-template-page-sub-service-php #bottom-content li {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png') -945px -1387px no-repeat;padding-left:15px;margin:0 0 7px 15px;}
+.page-template-page-sub-service-php #bottom-content h2 {font-size:.9em;margin-bottom:10px;}
+
+/* Tax Calculator */
+#tax-calculator h4.excerpt {font-weight:normal;margin-bottom:20px;}
+#tax-calculator h4#select-needs {font-weight:bold;border-top:1px solid #b9bfc6;margin-bottom:10px;padding-top:7px;}
+
+
+/* -- INDIVIDUAL CLIENT -- */
+#client_image {position:relative;float:right;}
+#client_caption {position:absolute;bottom:10px;float:right;z-index:5;right:0}
+#client_caption p {color:#fff;text-align:right;font-size:1em !important;margin:0;padding:5px;background:#666 !important;}
+
+#company-info {float:right;width:235px;margin-left:15px;}
+#company-info h3 {border-bottom:1px solid #ddd;margin:5px 0 10px 0;padding-bottom:5px;}
+#company-info h4 {font-size:.8em;margin:0;padding:0;}
+#company-info p {color:#000;font-weight:bold;font-size:.8em;line-height:normal;padding-bottom:5px;}
+#company-info p a {text-decoration:none;}
+#company-info ul#services_offered {font-size:.8em;}
+#company-info ul#services_offered li {margin:0 0 3px 15px;padding:0 0 0 15px !important;color:#000;font-weight:bold;}
+
+#company-snapshot {background:#eee;padding:15px;}
+#company-snapshot h4 {font-weight:normal !important;} 
+#company-snapshot p {margin: 0 !important; padding:0 !important;}
+#company-services {margin-top:15px;background:#eee;padding:15px;}
+
+/* Help Centre */
+#help-centre h1 {background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/icon-help-centre.png') no-repeat;color:#00446c;min-height:46px;padding-left:50px;}
+#help-centre form {margin:15px 0 20px 0;height:45px;}
+#help-centre form input#s {float:left;height:23px;border:1px solid #9f9f9f;width:700px;padding:5px 5px 5px 10px;color:#aaa;font-size:1.1em;font-family: 'daxpro-regular', sans-serif;}
+#help-centre form input#searchsubmit {display:block;float:right;background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite9.png') -328px -1483px no-repeat;height:46px;width:213px;border:0;margin-left:15px;padding:0;overflow:hidden;text-indent:-9999px;}
+
+.gms-grey-box {width:445px;float:left;display:inline;background:#f5f5f5;margin-right:20px;padding:10px;}
+.gms-grey-box.last {margin-right:0 !important;float:right}
+.gms-grey-box h2 {color:#00446c;border-bottom:1px solid #ed5233;padding-bottom:5px;}
+.gms-grey-box.last h2 {margin-bottom:15px;}
+.gms-grey-box ul {margin-top:15px;}
+.gms-grey-box ul li {margin:0 0 5px 0!important;}
+.gms-grey-box li a {color:#ed5233;}
+.gms-grey-box.last a {color:#0b466a;}
+
+.gms-grey-box .help-cat {height:50px;padding-left:10px;margin-bottom:5px;}
+.gms-grey-box .help-cat a {padding:10px 0 0 50px;display:block;}
+.gms-grey-box #help-cat1 a {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite9.png') -615px -1405px no-repeat;height:33px;}
+.gms-grey-box #help-cat2 a {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite9.png') -615px -1463px no-repeat;height:33px;}
+.gms-grey-box #help-cat3 a {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite9.png') -615px -1535px no-repeat;height:33px;}
+.gms-grey-box #help-cat4 a {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite9.png') -615px -1583px no-repeat;height:43px;}
+.gms-grey-box #help-cat5 a {background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite9.png') -615px -1644px no-repeat;height:33px;}
+
+
+.gms-dark-grey-box {background:#abacad;padding:10px;margin-top:15px;}
+.gms-dark-grey-box h2 {color:#fff;font-size:1.5em;border-bottom:1px solid #ed5233;padding-bottom:5px;}
+.gms-dark-grey-box ul {list-style-type:disc !important;margin:15px 0 5px 0 !important;padding:0 !important}
+.gms-dark-grey-box li {background:none !important;color:#fff;padding:0 !important;}
+.gms-dark-grey-box li a {color:#0b466a;text-decoration:underline;font-size:1.3em;}
+
+/*---------[4]Plugins---------*/
+
+#fancybox-wrap {z-index:999999;}
+
+.ui-helper-hidden {display: none;}
+.ui-helper-hidden-accessible {border: 0;clip: rect(0 0 0 0);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}
+.ui-helper-reset {margin: 0;padding: 0;border: 0;outline: 0;line-height: 1.3;text-decoration: none;font-size: 100%;list-style: none;}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {content: "";display: table;border-collapse: collapse;}
+.ui-helper-clearfix:after {clear: both;}
+.ui-helper-clearfix {min-height: 0; /* support: IE7 */}
+.ui-helper-zfix {width: 100%;height: 100%;top: 0;left: 0;position: absolute;opacity: 0;filter:Alpha(Opacity=0);}
+
+.ui-front {z-index: 100;}
+.ui-state-disabled {cursor: default !important;}
+.ui-icon {display: block;text-indent: -99999px;overflow: hidden;background-repeat: no-repeat;}
+
+.ui-accordion .ui-accordion-header {display: block;cursor: pointer;position: relative;min-height: 0; /* support: IE7 */}
+.ui-accordion .ui-accordion-icons {padding-left: 2.2em;}
+.ui-accordion .ui-accordion-noicons {padding-left: .7em;}
+.ui-accordion .ui-accordion-icons .ui-accordion-icons {padding-left: 2.2em;}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {position: absolute;left: .5em;top: 50%;margin-top: -8px;}
+.ui-accordion .ui-accordion-content {padding: 0;border-top: 0;overflow: auto;}
+
+.ui-icon {width: 16px;height: 16px;}
+.ui-widget-header .ui-icon {background-image: url('http://code.jquery.com/ui/1.10.2/themes/smoothness/images/ui-icons_222222_256x240.png');}
+.ui-state-default .ui-icon {background-image: url('http://code.jquery.com/ui/1.10.2/themes/smoothness/images/ui-icons_888888_256x240.png');}
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url('http://code.jquery.com/ui/1.10.2/themes/smoothness/images/ui-icons_454545_256x240.png');}
+.ui-state-active .ui-icon {background-image: url('http://code.jquery.com/ui/1.10.2/themes/smoothness/images/ui-icons_454545_256x240.png');}
+.ui-state-highlight .ui-icon {background-image: url('http://code.jquery.com/ui/1.10.2/themes/smoothness/images/ui-icons_2e83ff_256x240.png');}
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url('http://code.jquery.com/ui/1.10.2/themes/smoothness/images/ui-icons_cd0a0a_256x240.png');}
+
+/* positioning */
+.ui-icon-blank { background-position: 16px 16px; }
+
+.ui-icon-triangle-1-n { background-position: 0 -16px; }
+.ui-icon-triangle-1-ne { background-position: -16px -16px; }
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-se { background-position: -48px -16px; }
+.ui-icon-triangle-1-s { background-position: -64px -16px; }
+.ui-icon-triangle-1-sw { background-position: -80px -16px; }
+.ui-icon-triangle-1-w { background-position: -96px -16px; }
+.ui-icon-triangle-1-nw { background-position: -112px -16px; }
+.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
+.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
+
+
+div.ssl_seal {float:right;padding:0 0 4px 20px;}
+
+
+/* Email Plugin Popup */
+#wp-email-popup p {margin-bottom:20px !important;}
+#wp-email-popup input.TextField {padding:3px;}
+
+/*---------[5]Sidebars---------*/
+#sidebar-left {width:240px;float:left;display:inline;margin-right:32px;}
+#sidebar-left .sdac-widget {clear:both;width:240px;margin-bottom:27px;}
+
+#sdac-side-menu {background:#eee;border:1px solid #dbdbdb}
+#sdac-side-menu ul.side-menu ul {padding: 0 20px 0 20px;}
+#sdac-side-menu ul.side-menu li.top-item {text-transform:uppercase;font-size:.9em;}
+#sdac-side-menu ul.side-menu li.top-item a.top-link {font-weight:bold;display:block;width:220px;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-menu.png?v4') repeat-x; height:30px;line-height:30px;padding-left:20px; color:#001f4f; }
+#sdac-side-menu ul.side-menu li.top-item li {line-height:1.5em;text-transform:none !important;margin-bottom:7px;}
+#sdac-side-menu ul.children.categories {margin-left:10px;padding: 10px 0 0 10px !important}
+
+#sdac-side-menu ul.side-menu li.current_page_item a,#sdac-side-menu ul.side-menu li.current_page_ancestor a,  #sdac-side-menu ul.side-menu a:hover, #sdac-side-menu .current-cat a {color:#f05033;}
+#sdac-side-menu ul.side-menu li.current_page_item li a, #sdac-side-menu .current-cat li a {color:#001f4f !important;}
+#sdac-side-menu ul.side-menu li.current_page_item li.current-cat a, #sdac-side-menu .current-cat a {color:#001f4f !important;}
+
+#sdac-side-menu ul #about-links {padding-top:10px;padding-bottom:10px;}
+#sdac-side-menu ul.side-menu #about-links li {line-height:1.5em;text-transform:none;margin-bottom:7px;}
+
+#sdac-side-menu ul.side-menu #about-links.social-links li a {padding-left:24px !important; }
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-blog {background-position: -719px -1290px;height:auto;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-blog ul {margin-bottom:10px;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-blog li {background:none !important;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-blog li a {padding-left:10px !important;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-forum {background-position: -608px -134px;height:21px;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-twitter {background-position: -608px -158px;height:21px;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-facebook {background-position: -608px -180px;height:21px;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-linkedin {background-position: -608px -204px;height:21px;}
+#sdac-side-menu ul.side-menu #about-links.social-links li.link-google {background-position: -608px -226px;height:21px;}
+
+
+#sdac-side-menu ul.side-menu li.top-item a.ui-accordion-header-active {font-weight:bold;}
+
+.widget_sdac_random_testimonials_widget .client-quote {background:#f5f5f5 url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/bg-client-widget.png') repeat-x;width:223px;border:1px solid #dbdbdb;margin:0 auto;padding:7px;}
+.widget_sdac_random_testimonials_widget .client-quote img {width:220px;margin-left:1px;}
+.widget_sdac_random_testimonials_widget .client-quote blockquote {font-size:.9em;font-style:italic;line-height:1.6em;padding-top:0 !important;margin-top:10px !important}
+.widget_sdac_random_testimonials_widget .client-quote p.quote-by {font-size:.9em;padding:0 5px 10px 5px;}
+.widget_sdac_random_testimonials_widget .client-quote p.quote-by .read-more {font-size:.9em;}
+
+#sdac-subscribe  {background:#eee;border:1px solid #dbdbdb;}
+#sdac-subscribe .widget-content {padding:20px;}
+#sdac-subscribe .widget-content p {font-weight:normal;line-height:1.6em;}
+
+/*---------[6]Footer---------*/
+
+#footer {float:left;clear:both;background:#eee;width:948px;margin-top:12px;border:1px solid #dcdcdc;border-bottom:0;}
+#footer hr  {clear:both;height:1px;width:930px;border:0;background:#f05033;margin:10px !important;}
+
+.footer-links {float:left;display:inline;width:171px;margin:0 0 0 10px;padding-top:5px;}
+.footer-links h4 {font-size:.9em;font-weight:600;color:#001f4f;text-transform:uppercase;margin-bottom:5px;}
+.footer-links a {color:#001f4f;}
+.footer-links .blogroll {padding-bottom:15px;}
+.footer-links .blogroll li {font-size:.8em;line-height:1.4em !important;margin-top:7px;}
+
+.footer-links.first {width:208px;}
+
+
+#sub-footer {float:left;clear:both;width:100%;height:46px;background:#ff6600;}
+#sub-footer #footer-logo {width:131px;float:left;}
+#sub-footer #footer-logo a {display:block;text-indent:-9999px;width:131px;height:46px;overflow:hidden;background:url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite4.png') no-repeat 0 -65px;}
+#sub-footer p {color:#0000A0;font-size:.9em;padding:7px 0 0 0;text-align:center; margin-top: 10px;}
+#sub-footer p a {color:#0000A0;}
+
+
+#footer-icons {float:left;clear:both;margin-top:15px;width:950px;height:80px;margin-bottom:10px;}
+#footer-icons li {float:left;display:inline;margin-right:140px;}
+#footer-icons li a {display:block;text-indent:-9999px;overflow:hidden;background: url('http://media-cf.guidemesingapore.com/wp-content/themes/guidemesingapore2/images/sprite.png?v2guide3') 0 -1320px no-repeat;height:80px;width:100px;}
+#footer-icons li#icon-sbf a {background-position:  0 -1320px !important;width:104px;}
+#footer-icons li#icon-mom a {background-position: -212px -1320px;width:64px;}
+#footer-icons li#icon-icpas a {background-position: -278px -1320px;width:143px;}
+#footer-icons li#icon-cpa a {background-position: 0 -1620px;width:193px;}
+#footer-icons li#icon-saicsa a {background-position: -532px -1320px;width:57px;}
+#footer-icons li#icon-icsa a {background-position: -592px -1320px;width:68px;}
+
+#footer-icons li#icon-icsa {margin-right:0;}
+
+
+/* New Styles */
+.Cealogo{
+	float: left;
+/*     margin-top: 5px; */
+    width: 301px;
+	}
+	
+.ceasign{
+	position: absolute;
+    top: 235px;
+    z-index: 2000;
+    left: 35px;
+    width: 230px;
+}
+	
+.ceasign label {
+    display: block;
+    font-weight: bold;
+    font-size: 11px;
+    position: relative;
+/*     top: 5px; */
+/*     width: 133px !important; */
+}
+.ceasign .star {
+    color: #eb5252;
+    font-weight: normal !important;
+}
+	.ceasign .commonTitle {
+    color: rgb(227, 104, 21);
+    display: inline;
+    font-weight: 600;
+    line-height: 20px;
+}
+.ceasign h1 {
+    color: #666666;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.ceasign h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+.fontSize10 {
+    font-size: 10px !important;
+}
+.loud {
+    font-weight: 600;
+}
+	
+.cealogin{
+	height: 28px;
+    left: 617px;
+    position: absolute;
+    top: 57px;
+    width: 350px;
+    z-index: 2000;
+	}
+	
+	
+	.cealogin label {
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 1px;
+}
+
+.cealogin .loginfield {
+     padding-bottom: 3px;
+    width: 157px;
+}
+
+.cealogin .inputtext, .cealogin .inputpassword {
+    border-color: #1d2a5b;
+    margin: 0;
+    width: 142px;
+}
